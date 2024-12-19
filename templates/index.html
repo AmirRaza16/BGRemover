@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <lin href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <title>Online Background Remover Tool</title>
+        <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div>
+        <header class="main-header">
+            <div class="logo-img">
+                <img src="static/logo.png" alt="Logo" />
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <h1>Background Remover</h1>
+        <form id="uploadForm" class="form">
+            <label for="images">Select Images:</label>
+            <input type="file" id="images" name="images" multiple required>
+
+            <label for="color">Background Color:</label>
+            <input type="color" id="color" name="color" value="#ffffff">
+
+            <label for="alpha">Background Transparency (Alpha):</label>
+            <input type="range" id="alpha" name="alpha" min="0" max="255" value="0">
+            <span id="alphaValue">0</span>
+
+            <label for="format">Output Format:</label>
+            <select id="format" name="format">
+                <option value="JPEG">JPEG</option>
+                <option value="PNG">PNG</option>
+                <option value="JPG">JPG</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Process Images</button>
+        </form>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+        </div>
+        <div id="loadingText" class="hidden"></div>
+        <a id="downloadLink" href="#" class="hidden"></a>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
